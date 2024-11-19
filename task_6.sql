@@ -12,7 +12,7 @@ FOR NO KEY UPDATE;
 
 WITH cappuccino_prices AS (
     SELECT restaurant_uuid, 
-           to_jsonb((menu #>> '{Кофе, Капучино}')::integer * 1.2) AS price
+           to_jsonb((menu #>> '{Кофе, Капучино}')::numeric * 1.2) AS price
     FROM cafe.restaurants
     WHERE menu -> 'Кофе' ? 'Капучино'
 )
