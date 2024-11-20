@@ -11,9 +11,9 @@ FROM raw_data.sales s;
 INSERT INTO cafe.restaurant_manager_work_dates (restaurant_uuid, manager_uuid, 
                                                 start_work_date, end_work_date)
 SELECT r.restaurant_uuid, m.manager_uuid, MIN(s.report_date), MAX(s.report_date)
-FROM cafe.restaurants r
-FULL JOIN raw_data.sales s ON s.cafe_name = r.name
-FULL JOIN cafe.managers m ON s.manager = m.name
+FROM raw_data.sales s
+INNER JOIN cafe.restaurants r ON s.cafe_name = r.name
+INNER JOIN cafe.managers m ON s.manager = m.name
 GROUP BY r.restaurant_uuid, m.manager_uuid;
 
 INSERT INTO cafe.sales (date, restaurant_uuid, avg_check)
