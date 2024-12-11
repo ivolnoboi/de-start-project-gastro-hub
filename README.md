@@ -39,7 +39,7 @@ Cхема, хранящая сырые данные.
 ### Схема cafe
 Содержит все необходимые таблицы.
 
-![](https://github.com/ivolnoboi/de-start-project-gastro-hub/raw/main/img/schema_cafe.png)
+![](https://github.com/ivolnoboi/de-start-project-gastro-hub/raw/main/img/cafe_schema.png)
 
 #### cafe.restaurants
 Таблица, хранящая в себе информацию о заведениях общепита.
