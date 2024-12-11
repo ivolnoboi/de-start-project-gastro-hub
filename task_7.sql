@@ -1,6 +1,6 @@
 /*Adding a new phone number using a template.*/
 BEGIN;
-LOCK TABLE materials IN EXCLUSIVE MODE;
+LOCK TABLE cafe.managers IN EXCLUSIVE MODE;
 ALTER TABLE cafe.managers ADD COLUMN phones varchar[];
 
 WITH phones_tmp AS (
